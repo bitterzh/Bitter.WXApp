@@ -1,0 +1,58 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/user/user",
+    "pages/tmall/tmall",
+    "pages/school/school",
+    "pages/order/order",
+    "pages/course/course",
+    "pages/setting/aboutUs/aboutUs",
+    "pages/setting/userMsg/userMsg",
+    "pages/setting/mobile/mobile",
+    "pages/setting/setting",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#2CC17B",
+    "navigationBarTitleText": "Smart",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#8a8a8a",
+    "selectedColor": "#2CC17B",
+    "borderStyle": "",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "resources/images/home.png",
+        "selectedIconPath": "resources/images/home_select.png"
+      },
+      {
+        "pagePath": "pages/tmall/tmall",
+        "text": "云商城",
+        "iconPath": "resources/images/tmall.png",
+        "selectedIconPath": "resources/images/tmall_select.png"
+      },
+      {
+        "pagePath": "pages/school/school",
+        "text": "云课堂",
+        "iconPath": "resources/images/school.png",
+        "selectedIconPath": "resources/images/school_select.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "resources/images/user.png",
+        "selectedIconPath": "resources/images/user_select.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": false
+}

@@ -1,0 +1,45 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="section" id="musicInfos">
+    <text id="infos">歌曲来源网易云音乐，不可用做商业用途！</text>
+  </view>
+  <view wx:if="{{showContainer}}" class="musicContainer">
+    <view class="section" id="giveMusicName">
+      <input class="musicname" value="{{input}}" placeholder="请输入歌曲名称" bindinput="bindMusicNameInput" />
+      <button type="primary" bindtap="bindSearch" class='btn_seach'>搜索</button>
+    </view>
+    <image src="{{picUrl}}" id="picUrl" style="{{transform}}" bindtap="toggleRotate"></image>
+    <audio poster="{{picUrl}}" name="{{name}}" author="{{singer}}" src="{{musicUrl}}" id="myAudio" controls="true" loop="false" bindplay="playMusic" bindpause="pauseMusic">
+    </audio>
+  </view>
+</view>
+<view class="list" wx:if="{{!showContainer}}">
+  <view wx:for="{{list}}" class="item" bindtap="changeMusic" wx:key="{{index}}" data-musicIndex="{{index}}">
+    <image src="{{item.picUrl}}" alt="" data-musicIndex="{{index}}"></image>
+    <text class="name" data-musicIndex="{{index}}">{{item.name}}</text>
+    <text class="album" data-musicIndex="{{index}}">{{item.singer}}-{{item.albumName}}</text>
+  </view>
+</view>
+
+<scroll-view scroll-y="true">
+  <block wx:for="{{ songRec }}" wx:for-item="song" wx:key="song">
+    <view class="song_list">
+      <view class="song-album">
+        <image src="{{ song.album }}" />
+      </view>
+      <view class="song-content">
+        <view class="content">
+          <view bindtap="playSong" data-id="{{ song.song_id }}">
+            <text class="song-title">{{ song.title }}</text>
+          </view>
+          <view bindtap="playSong" data-id="{{ song.song_id }}">
+            <text class="song-author">{{ song.author }} - {{song.album_title}}</text>
+          </view>
+        </view>
+      </view>
+        <view class="song-play" bindtap="playSong" data-id="{{ song.song_id }}">
+          <image src="/asset/play.png" style="width:30px;height:30px" />
+        </view>
+    </view>
+  </block>
+</scroll-view>
